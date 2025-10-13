@@ -531,7 +531,6 @@ func CheckResponse(r *http.Response) error {
 	if err == nil && len(data) > 0 {
 
 		// reset response body
-
 		proxyErrorResponse := &ProxyErrorResponse{Response: r}
 		json.Unmarshal(data, proxyErrorResponse)
 		if proxyErrorResponse.Error() != "" {
@@ -560,6 +559,17 @@ func CheckResponse(r *http.Response) error {
 						Response: r,
 						ProxyError: ProxyError{
 							Code:           ErrorRateLimitCode,
+							Message:        jsonErrorResponse.Error(),
+							Type:           ErrorType,
+							HttpStatusCode: r.StatusCode,
+						},
+					}
+				} else if e.Label == ErrorCommentGuidanceValidationFailedLabel {
+					r.Body = io.NopCloser(bytes.NewReader(data))
+					return &ProxyErrorResponse{
+						Response: r,
+						ProxyError: ProxyError{
+							Code:           ErrorCommentGuidanceValidationFailedCode,
 							Message:        jsonErrorResponse.Error(),
 							Type:           ErrorType,
 							HttpStatusCode: r.StatusCode,

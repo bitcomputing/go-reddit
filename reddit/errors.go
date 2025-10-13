@@ -11,15 +11,17 @@ import (
 const (
 	ErrorType = "reddit_api_error"
 
-	ErrorCommonLabel                    = "ERROR"
-	ErrorSubmitBannedFromSubredditLabel = "BANNED_FROM_SUBREDDIT"
-	ErrorBlockedLable                   = "BLOCKED"
-	ErrorRateLimitLabel                 = "RATELIMIT"
+	ErrorCommonLabel                          = "ERROR"
+	ErrorSubmitBannedFromSubredditLabel       = "BANNED_FROM_SUBREDDIT"
+	ErrorBlockedLable                         = "BLOCKED"
+	ErrorRateLimitLabel                       = "RATELIMIT"
+	ErrorCommentGuidanceValidationFailedLabel = "COMMENT_GUIDANCE_VALIDATION_FAILED"
 
-	ErrorCommonCode                    = 10001
-	ErrorSubmitBannedFromSubredditCode = 10002
-	ErrorBlockedCode                   = 10003
-	ErrorRateLimitCode                 = 10004
+	ErrorCommonCode                          = 10001
+	ErrorSubmitBannedFromSubredditCode       = 10002
+	ErrorBlockedCode                         = 10003
+	ErrorRateLimitCode                       = 10004
+	ErrorCommentGuidanceValidationFailedCode = 10005
 )
 
 // APIError is an error coming from Reddit.
