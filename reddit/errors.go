@@ -13,7 +13,7 @@ const (
 
 	ErrorCommonLabel                          = "ERROR"
 	ErrorSubmitBannedFromSubredditLabel       = "BANNED_FROM_SUBREDDIT"
-	ErrorBlockedLable                         = "BLOCKED"
+	ErrorBlockedLable                         = "BLOCKED" // ACCESS_TOKKEN 无效的时候会返回BLOCKED
 	ErrorRateLimitLabel                       = "RATELIMIT"
 	ErrorCommentGuidanceValidationFailedLabel = "COMMENT_GUIDANCE_VALIDATION_FAILED"
 
